@@ -13,8 +13,7 @@ before_script:
   - export PYTHONPATH=$PYTHONPATH:$(pwd)
 
 script:
-  -cd wsgi\myproject
-  -python manage.py test
+  -python python test.py
 
 before_deploy:
 - gem install rhc
