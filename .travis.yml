@@ -12,7 +12,7 @@ before_script:
   - export PYTHONPATH=$PYTHONPATH:$(pwd)
 deploy:
   provider: openshift
-  user: josuecevedo@hotmail.com
-  password: mayraantonia # can be encrypted
-  domain: tareaito
-  app: python
+  user: $OPENSHIFT_USERNAME
+  password: $OPENSHIFT_PASSWORD # can be encrypted
+  domain: $OPENSHIFT_DOMAIN
+  app: $OPENSHIFT_APP
