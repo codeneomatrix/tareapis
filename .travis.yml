@@ -13,7 +13,7 @@ before_script:
   - export PYTHONPATH=$PYTHONPATH:$(pwd)
 
 script:
-  -python python test.py
+  -python test.py
 
 before_deploy:
 - gem install rhc
