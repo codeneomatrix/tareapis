@@ -1,0 +1,18 @@
+sudo: false
+language: python
+env:
+  - DJANGO=1.9.5
+python:
+  - "2.7"
+install:
+  - pip install -q Django==$DJANGO
+  - pip install jdatetime
+  - pip install psycopg
+before_script:
+  - export PYTHONPATH=$PYTHONPATH:$(pwd)
+deploy:
+  provider: openshift
+  user: josuecevedo@hotmail.com
+  password: mayraantonia # can be encrypted
+  domain: tareaito
+  app: python

@@ -24,11 +24,20 @@ SECRETS = secrets.getter(os.path.join(DATA_DIR, 'secrets.json'))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
+ON_OPENSHIFT = False
+if os.environ.has_key('OPENSHIFT_REPO_DIR'):
+     ON_OPENSHIFT = True
+
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = SECRETS['secret_key']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG') == 'True'
+if ON_OPENSHIFT:
+     DEBUG = False
+else:
+     DEBUG = True
+
 
 from socket import gethostname
 ALLOWED_HOSTS = [
@@ -84,14 +93,33 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
-
-DATABASES = {
+if ON_OPENSHIFT:
+    DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         # GETTING-STARTED: change 'db.sqlite3' to your sqlite3 database:
-        'NAME': os.path.join(DATA_DIR, 'db.sqlite3'),
+        'USER':'admin57cucrd',
+        'PASSWORD':'eE-qPsccgxsE',
+        'NAME':'python',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
+        #'NAME': os.path.join(DATA_DIR, 'db.sqlite3'),
+        }
     }
-}
+else:
+    DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        # GETTING-STARTED: change 'db.sqlite3' to your sqlite3 database:
+        'USER':'admin57cucrd',
+        'PASSWORD':'eE-qPsccgxsE',
+        'NAME':'python',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
+        #'NAME': os.path.join(DATA_DIR, 'db.sqlite3'),
+        }
+    }
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/

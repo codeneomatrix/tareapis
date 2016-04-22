@@ -17,7 +17,8 @@ setup(
     url='http://www.python.org/sigs/distutils-sig/',
     # GETTING-STARTED: define required django version:
     install_requires=[
-        'Django==1.9.5'
+        'Django==1.9.5',
+        'psycopg==2.6.1'
     ],
     dependency_links=[
         'https://pypi.python.org/simple/django/'
