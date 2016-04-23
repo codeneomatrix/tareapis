@@ -18,7 +18,7 @@ setup(
     # GETTING-STARTED: define required django version:
     install_requires=[
         'Django==1.9.5',
-        'psycopg==2.6.1'
+        'psycopg2==2.6.1'
     ],
     dependency_links=[
         'https://pypi.python.org/simple/django/'
