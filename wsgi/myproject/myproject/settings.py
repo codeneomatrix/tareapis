@@ -98,11 +98,11 @@ if ON_OPENSHIFT:
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         # GETTING-STARTED: change 'db.sqlite3' to your sqlite3 database:
-        'USER':'OPENSHIFT_POSTGRESQL_DB_USERNAME',
-        'PASSWORD':'OPENSHIFT_POSTGRESQL_DB_PASSWORD',
+        'USER':'admin57cucrd',
+        'PASSWORD':'eE-qPsccgxsE',
         'NAME':'python',
-        'HOST': 'OPENSHIFT_POSTGRESQL_DB_HOST',
-        'PORT': 'OPENSHIFT_POSTGRESQL_DB_PORT',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
         #'NAME': os.path.join(DATA_DIR, 'db.sqlite3'),
         }
     }
