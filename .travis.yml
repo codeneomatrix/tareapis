@@ -24,7 +24,7 @@ before_deploy:
   -l $OPENSHIFT_USER -p $OPENSHIFT_PASS
 deploy:
   provider: openshift
-  user: $OPENSHIFT_USERNAME
-  password: $OPENSHIFT_PASSWORD
-  domain: $OPENSHIFT_DOMAIN
-  app: $OPENSHIFT_APP
+  user: josuecevedo@hotmail.com
+  password: mayraantonia
+  domain: tareaito
+  app: python

@@ -111,8 +111,8 @@ else:
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         # GETTING-STARTED: change 'db.sqlite3' to your sqlite3 database:
-        'USER':'admin57cucrd',
-        'PASSWORD':'eE-qPsccgxsE',
+        'USER':'postgres',
+        'PASSWORD':'hola',
         'NAME':'python',
         'HOST': '127.0.0.1',
         'PORT': '5432',
